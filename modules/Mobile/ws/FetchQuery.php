@@ -9,7 +9,7 @@
  * All Rights Reserved.
  ************************************************************************************/
 include_once 'include/Webservices/RetrieveQuery.php';
-class Mobile_WS_FetchLanguage extends Mobile_WS_Controller {
+class Mobile_WS_FetchQuery extends Mobile_WS_Controller {
 	
 	private $module = false;
 	
@@ -34,7 +34,9 @@ class Mobile_WS_FetchLanguage extends Mobile_WS_Controller {
 		$module = $request->get('module');
 		$andWhere = $request->get('andWhere');
 		$orWhere = $request->get('orWhere');
-		$record = vtws_query($module,$andWhere,$orWhere, $current_user);
+		$limit = $request->get('limit');
+//                return json_decode($andWhere);
+		$record = vtws_retrievequery($module,json_decode($andWhere, TRUE),json_decode($orWhere,TRUE),$limit, $current_user);
 		
 		$response = new Mobile_API_Response();
 		$response->setResult(array('record' => $record));
