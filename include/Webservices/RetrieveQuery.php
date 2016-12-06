@@ -11,24 +11,35 @@
 
 require_once("include/Webservices/Query.php");
 
-function vtws_retrievequery($module, $andWhere, $orWhere, $user) {
+function vtws_retrievequery($module, $andWhere, $orWhere, $limit, $user) {
 
     global $log, $adb;
 
-    $select = "SELECT * FROM " . $module . " WHERE ";
+    $select = "SELECT * FROM " . $module;
     $and = array();
+    $whereString = '';
     foreach ($andWhere as $key => $value) {
-        $and[] = $key . "='" . $value."'";
+        $and[] = $key . "='" . $value . "'";
     }
     $whereString = implode(" AND ", $and);
     $or = array();
     foreach ($orWhere as $key => $value) {
-        $or[] = $key . "='" . $value."'";
+        $or[] = $key . "='" . $value . "'";
     }
-    if (count($or) > 1)
-        $whereString = $whereString . " AND " . implode(" OR ", $or);
-    $select = $select . $whereString.';';
 
+    if (count($or) > 1) {
+        if ($whereString != '')
+            $whereString = $whereString . " AND " . implode(" OR ", $or) ;
+        else
+            $whereString =  implode(" OR ", $or) ;
+    }
+    if ($whereString != '')
+        $whereString = " WHERE " . $whereString;
+    $select = $select . $whereString;
+    if ($limit != '')
+        $select = $select . " LIMIT " . $limit;
+    $select = $select . ";";
+//    return $select;
     $result = vtws_query($select, $user);
     return $result;
 }
