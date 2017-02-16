@@ -3,7 +3,8 @@ This is useful for the servers which prohibits 'query' web service method of vti
 
 ## Examples
 This example is given for Mobile API
-``
+
+
 $params = array(
     "_operation" => "fetchQuery", "module" => "Accounts",
     "andWhere" => json_encode(array()), // This is equal to SELECT ALL
@@ -12,9 +13,10 @@ $params = array(
     "_session" => $resobj->result->login->session,
 );
 
-``
-``
-echo '<h3> Getting an Account</h3>';
+
+
+ ## Getting an Account
+
 $params = array(
     "_operation" => "fetchQuery", "module" => "Accounts",
     "andWhere" => json_encode(array('email1' => 'ajstharsan@gmail.com')), // use a specifi email rather than the one hardcoded here
@@ -22,6 +24,6 @@ $params = array(
     "limit" => "",
     "_session" => $resobj->result->login->session,
 );
-``
+
 
 
