@@ -4,9 +4,9 @@ This is useful for the servers which prohibits 'query' web service method of vti
 ## Examples
 This example is given for Mobile API
 
-
+### Getting all accounts
 $params = array(
-    "_operation" => "fetchQuery", "module" => "Accounts",
+    "_operation" => "fetchQuery", "module" => "Accounts",  
     "andWhere" => json_encode(array()), // This is equal to SELECT ALL
     "orWhere" => json_encode(array()),
     "limit" => "0,100", // Call 100 by 100 until empty set will be received. Example next limit set would be 100, 100
@@ -15,7 +15,7 @@ $params = array(
 
 
 
- ## Getting an Account
+### Getting an Account
 
 $params = array(
     "_operation" => "fetchQuery", "module" => "Accounts",
