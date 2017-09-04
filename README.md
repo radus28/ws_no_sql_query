@@ -7,9 +7,13 @@ This example is given for Mobile API
 ### Getting all accounts
 $params = array(
     "_operation" => "fetchQuery", "module" => "Accounts",  
+    
     "andWhere" => json_encode(array()), // This is equal to SELECT ALL
+    
     "orWhere" => json_encode(array()),
+    
     "limit" => "0,100", // Call 100 by 100 until empty set will be received. Example next limit set would be 100, 100
+    
     "_session" => $resobj->result->login->session,
 );
 
