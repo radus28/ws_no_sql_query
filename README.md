@@ -1,6 +1,10 @@
 # No SQL web service instead of query api
 This is useful for the servers which prohibits 'query' web service method of vtiger.
 
+## Setup
+Copy the files into the CRM root (it may ask to overwrite few folders, answer yes)
+Run the db.sql under CRM database
+
 ## Examples
 This example is given for Mobile API
 
