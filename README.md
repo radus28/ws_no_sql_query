@@ -1,5 +1,5 @@
 # No SQL web service instead of query api
-Vtiger Query web service alternative method
+No SQL or Non SQL like web service alternative to vtiger web service query operation.  This web service can be used to write queries, but not using SQL like query.  This is alterative of mod_security like issues happening in shared hosting too.
 
 ## Setup
 * Copy the files into the CRM root (it may ask to overwrite few folders, answer yes)
