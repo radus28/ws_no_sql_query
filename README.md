@@ -18,7 +18,7 @@ $params = array(
     
     "limit" => "0,100", // Call 100 by 100 until empty set will be received. Example next limit set would be 100, 100
     
-    "_session" => $resobj->result->login->session,
+    "sessionName" => $resobj->result->login->session,
 );
 
 
@@ -30,7 +30,7 @@ $params = array(
     "andWhere" => json_encode(array('email1' => 'ajstharsan@gmail.com')), // use a specifi email rather than the one hardcoded here
     "orWhere" => json_encode(array()),
     "limit" => "",
-    "_session" => $resobj->result->login->session,
+    "sessionName" => $resobj->result->login->session,
 );
 
 
