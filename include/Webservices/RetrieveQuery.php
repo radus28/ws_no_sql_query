@@ -22,12 +22,13 @@ function vtws_retrievequery($module, $andWhere, $orWhere, $limit, $user) {
         $and[] = $key . "='" . $value . "'";
     }
     $whereString = implode(" AND ", $and);
-    $or = array();
+    $or = [];
+
     foreach ($orWhere as $key => $value) {
         $or[] = $key . "='" . $value . "'";
     }
 
-    if (count($or) > 1) {
+    if (count($or) > 0) {
         if ($whereString != '')
             $whereString = $whereString . " AND " . implode(" OR ", $or) ;
         else
