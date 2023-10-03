@@ -9,7 +9,7 @@ No SQL or Non SQL like web service alternative to vtiger web service query opera
 This example is given for Mobile API
 
 ### Getting all accounts
-
+```
 $params = array(
 
     "operation" => "retrievequery", "module" => "Accounts",  
@@ -22,11 +22,12 @@ $params = array(
     
     "sessionName" => $resobj->result->login->session,
 );
-
+```
 
 
 ### Getting an Account
 
+```
 $params = array(
 
     "operation" => "retrievequery", "module" => "Accounts",
@@ -40,6 +41,6 @@ $params = array(
     "sessionName" => $resobj->result->login->session,
     
 );
-
+```
 
 
