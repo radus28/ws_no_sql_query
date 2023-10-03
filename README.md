@@ -9,7 +9,9 @@ No SQL or Non SQL like web service alternative to vtiger web service query opera
 This example is given for Mobile API
 
 ### Getting all accounts
+
 $params = array(
+
     "operation" => "retrievequery", "module" => "Accounts",  
     
     "andWhere" => json_encode(array()), // This is equal to SELECT ALL
@@ -26,11 +28,17 @@ $params = array(
 ### Getting an Account
 
 $params = array(
+
     "operation" => "retrievequery", "module" => "Accounts",
+    
     "andWhere" => json_encode(array('email1' => 'ajstharsan@gmail.com')), // use a specifi email rather than the one hardcoded here
+    
     "orWhere" => json_encode(array()),
+    
     "limit" => "",
+    
     "sessionName" => $resobj->result->login->session,
+    
 );
 
 
